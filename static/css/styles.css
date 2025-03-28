@@ -73,10 +73,11 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #2937f0;
+  --bs-link-color: #990000;
   --bs-link-hover-color: #212cc0;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
+  --bs-usc-red: #990000;
 }
 
 *,
@@ -10885,7 +10886,7 @@ section {
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover {
 
-   color: var(--bs-blue)
+   color: var(--bs-usc-red)
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
   color: #2937f0;
