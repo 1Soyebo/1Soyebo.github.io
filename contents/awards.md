@@ -1,1 +1,1 @@
-- 👨🏾‍🍳
+- Runner-Up, Best Demo Presentation, IEEE EMBS International Conference on Body Sensor Networks (BSN), 2025.
