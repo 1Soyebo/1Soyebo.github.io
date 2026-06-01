@@ -8,8 +8,8 @@ Hi, I'm Ibukunoluwa, a Computer Engineering PhD student at the University of Sou
 isoyebo[at]usc.edu
 
 #### Education
-B.Eng., Electrical and Electronics Engineering, Covenant University, 2016-2021.
-MS., Electrical and Computer Engineering, University of Southern California, 2024-2026 
+- B.Eng., Electrical and Electronics Engineering, Covenant University, 2016-2021.
+- MS., Electrical and Computer Engineering, University of Southern California, 2024-2026. 
 
 #### Research Interests
 Affective Computing, Human Centered Computing, Edge-deployed Machine Learning.
