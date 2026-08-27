@@ -14,29 +14,146 @@
 #     notes: A short review or memory.
 #     link: https://example.com/event
 concerts:
-  - artist: Example Artist
-    date: 2026-10-31
+  - artist: Ezra Collective
+    date: 2026-11-14
     time: "20:00"
-    venue: Example Arena
+    venue: The Regent Theater
     city: Los Angeles
     country: USA
-    genre: Live music
-    status: Attended
-    rating: 5
-    price: "$75"
-    companions: Friends
-    notes: A memorable night with an excellent live set.
-    link: https://example.com/event
-  - artist: Another Artist
-    date: 2026-11-15
+    genre: Jazz
+    # status: Attended
+    # rating: 5
+    price: "$42.25"
+    companions: Alone
+    # notes: A memorable night with an excellent live set.
+    link: https://www.ticketmaster.com/event/090064D2B5C5AB06
+  - artist: Asake
+    date: 2026-09-06
     time: "19:30"
-    venue: Another Venue
-    city: New York
+    venue: The Greek Theatre
+    city: Los Angeles
     country: USA
-    genre: Rock
+    genre: Afrobeat
+    # status: Attended
+    # rating: 4
+    price: "$56.45"
+    companions: Friends
+    # notes: Great performance, but the sound quality could have been better.
+    link: https://www.eventim.com/artist/asake/?affiliate=TC0
+  - artist: Karaba
+    date: 2026-09-11
+    time: "22:00"
+    venue: The Spotlight
+    city: Los Angeles
+    country: USA
+    genre: Afro House
+    # status: Attended
+    # rating: 4
+    price: "$24.93"
+    companions: Alone
+    # notes: Great performance, but the sound quality could have been better.
+    link: https://link.dice.fm/M9a98b94fa37?dice_id=M9a98b94fa37
+  - artist: Juls
+    date: 2026-09-20
+    time: "16:00"
+    venue: The Spotlight
+    city: Los Angeles
+    country: USA
+    genre: Afrobeat
+    # status: Attended
+    # rating: 4
+    price: "$25.24"
+    companions: Friends
+    # notes: Great performance, but the sound quality could have been better.
+    link: https://www.eventbrite.com/e/juls-live-in-los-angeles-tickets-1996889065951
+  - artist: Masego
+    date: 2026-09-16
+    time: "20:00"
+    venue: The Greek Theatre
+    city: Los Angeles
+    country: USA
+    genre: RnB
+    # status: Attended
+    # rating: 4
+    price: "$49.00"
+    companions: Alone
+    # notes: Great performance, but the sound quality could have been better.
+    link: https://www.ticketmaster.com/event/090064C4FE427889
+  - artist: Nitefreak
+    date: 2026-08-14
+    time: "22:00"
+    venue: Sound Nightclub
+    city: Los Angeles
+    country: USA
+    genre: Afro House
     status: Attended
     rating: 4
-    price: "$60"
-    companions: Family
-    notes: Great performance, but the sound quality could have been better.
-    link: https://example.com/another-event
+    price: "$30.60"
+    companions: Alone
+    notes: Outstanding set. Went after leg day, no alcohol too, had to get a Red Bull Zero sugar to keep me going. Regular crowd you'd expect in LA with a handful of black people.
+    link: https://linktr.ee/nitefreak
+  - artist: Leo Middea
+    date: 2026-06-15
+    time: "19:00"
+    venue: 1720
+    city: Los Angeles
+    country: USA
+    genre: Brazilian Pop
+    status: Attended
+    rating: 5
+    price: "$41.20"
+    companions: Friends
+    notes: One of one concert. He came out hella late but it was worth it. Performed by himself with only a guitar, venue was hot as hell. Walked into the crowd for the last song and it was a so cool.
+    link: https://ffm.bio/leomiddea
+  - artist: Bobby Nsenga
+    date: 2026-08-08
+    time: "21:00"
+    venue: The Regent Theater
+    city: Los Angeles
+    country: USA
+    genre: RnB
+    status: Attended
+    rating: 4
+    price: Free (for me hehe)
+    companions: Friends
+    notes: Not my typical go to but I understand the appeal. Short set but the girlies loved it and I did too.
+    link: https://bobbynsenga.komi.io/
+  - artist: DJ Maphorisa
+    date: 2026-06-11
+    time: "22:00"
+    venue: Vuuka House
+    city: Los Angeles
+    country: USA
+    genre: Amapiano
+    status: Attended
+    rating: 4
+    price: "$33.77"
+    companions: Friends
+    notes: He's very much a legend. Went after cycling at Santa Monica so my legs were killing me. The South Africans were so lit but I realized I may not be the biggest fan of Amapiano? Shazammed a bunch of songs still. Left early cuz I was drenched in sweat.
+    link: https://madmoneyrollingpaper.co.za/
+  - artist: JAZZWRLD and Thukuthela
+    date: 2026-06-27
+    time: "20:00"
+    venue: Vuuka House
+    city: Los Angeles
+    country: USA
+    genre: Afro House, 3 Step
+    status: Attended
+    rating: 4
+    price: "$51.84"
+    companions: Friends
+    notes: One half of the duo failed to show up but Poco Lee was there? The 3 step was 3 stepping. Their sound is so distinct and defines the genre to a large extent. Fikayo pulled up too and it was lovely 
+    link: https://bobbynsenga.komi.io/
+  - artist: Odunsi (The Engine)
+    date: 2026-06-07
+    time: "19:00"
+    venue: The Peppermint Club
+    city: Los Angeles
+    country: USA
+    genre: Afrobeat, Alternative
+    status: Attended
+    rating: 5
+    price: "$35.25"
+    companions: Alone
+    notes: Went after leg day too lmfao, made a lot of new friends. The venue was small and intimate. He performed a lot of his hits and some new songs. He's such a baddie.
+    link: https://linktr.ee/BlackEagleTourbyote

@@ -1,4 +1,5 @@
-const concertList = document.getElementById('concert-list');
+const upcomingList = document.getElementById('upcoming-list');
+const pastList = document.getElementById('past-list');
 const searchInput = document.getElementById('search');
 const sortSelect = document.getElementById('sort');
 const sortDirection = document.getElementById('sort-direction');
@@ -28,6 +29,12 @@ function dateValue(date) {
     return Number.isNaN(parsedDate.valueOf()) ? 0 : parsedDate.valueOf();
 }
 
+function startOfToday() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return today.valueOf();
+}
+
 function displayTime(time) {
     if (!time) return '';
     const parsedTime = new Date(`1970-01-01T${time}`);
@@ -43,30 +50,40 @@ function compareValues(first, second, field) {
 function render() {
     const query = searchInput.value.trim().toLowerCase();
     const field = sortSelect.value;
-    const visibleConcerts = concerts.filter(concert => Object.values(concert).join(' ').toLowerCase().includes(query));
-    visibleConcerts.sort((first, second) => {
+    const matchingConcerts = concerts.filter(concert => Object.values(concert).join(' ').toLowerCase().includes(query));
+    const upcoming = matchingConcerts.filter(concert => dateValue(concert.date) >= startOfToday());
+    const past = matchingConcerts.filter(concert => dateValue(concert.date) < startOfToday());
+    const compare = (first, second) => {
         const result = compareValues(first, second, field);
         return ascending ? result : -result;
-    });
+    };
+    upcoming.sort(compare);
+    past.sort((first, second) => field === 'date' ? -compareValues(first, second, field) * (ascending ? 1 : -1) : compare(first, second));
 
-    document.getElementById('concert-count').textContent = concerts.length;
-    if (!visibleConcerts.length) {
-        concertList.innerHTML = `<div class="concert-empty"><strong>${concerts.length ? 'No shows match that search.' : 'No concerts have been added yet.'}</strong><br><span>Concert entries can be added to <code>contents/concerts.yml</code>.</span></div>`;
-        return;
-    }
+    document.getElementById('upcoming-count').textContent = concerts.filter(concert => dateValue(concert.date) >= startOfToday()).length;
+    document.getElementById('past-count').textContent = concerts.filter(concert => dateValue(concert.date) < startOfToday()).length;
 
-    concertList.innerHTML = visibleConcerts.map(concert => {
+    function renderSection(section, target, sectionName) {
+        if (!section.length) {
+            target.innerHTML = `<div class="concert-empty"><strong>${concerts.length ? `No ${sectionName.toLowerCase()} shows match that search.` : `No ${sectionName.toLowerCase()} concerts yet.`}</strong><br><span>Concert entries can be added to <code>contents/concerts.yml</code>.</span></div>`;
+            return;
+        }
+        target.innerHTML = section.map(concert => {
         const metadata = [
             displayDate(concert.date), displayTime(concert.time), concert.venue,
             [concert.city, concert.country].filter(Boolean).join(', '), concert.genre,
             concert.status, concert.price && `Ticket: ${concert.price}`,
-            concert.companions && `With ${concert.companions}`
+            concert.companions
         ].filter(Boolean);
         const rating = concert.rating ? `<span class="concert-rating" aria-label="${escapeHtml(concert.rating)} out of 5 stars">${'★'.repeat(Number(concert.rating))}${'☆'.repeat(5 - Number(concert.rating))}</span>` : '';
         const notes = concert.notes ? `<p class="mt-3 mb-0">${escapeHtml(concert.notes)}</p>` : '';
         const link = /^https?:\/\//i.test(concert.link || '') ? `<a href="${escapeHtml(concert.link)}" target="_blank" rel="noopener">Event details <i class="bi-box-arrow-up-right"></i></a>` : '';
-        return `<article class="concert-card"><div class="concert-label">${escapeHtml(concert.status || 'Concert')} ${rating}</div><h2>${escapeHtml(concert.artist)}</h2><div class="concert-card-meta">${metadata.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>${notes}${link ? `<div class="mt-3">${link}</div>` : ''}</article>`;
-    }).join('');
+            return `<article class="concert-card"><div class="concert-label">${escapeHtml(concert.status || 'Concert')} ${rating}</div><h2>${escapeHtml(concert.artist)}</h2><div class="concert-card-meta">${metadata.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>${notes}${link ? `<div class="mt-3">${link}</div>` : ''}</article>`;
+        }).join('');
+    }
+
+    renderSection(upcoming, upcomingList, 'Upcoming');
+    renderSection(past, pastList, 'Past');
 }
 
 fetch('contents/concerts.yml')
@@ -80,7 +97,9 @@ fetch('contents/concerts.yml')
         render();
     })
     .catch(() => {
-        concertList.innerHTML = '<div class="concert-empty"><strong>The concert archive could not be loaded.</strong><br><span>Check that <code>contents/concerts.yml</code> is available.</span></div>';
+        const errorMessage = '<div class="concert-empty"><strong>The concert archive could not be loaded.</strong><br><span>Check that <code>contents/concerts.yml</code> is available.</span></div>';
+        upcomingList.innerHTML = errorMessage;
+        pastList.innerHTML = errorMessage;
     });
 
 searchInput.addEventListener('input', render);

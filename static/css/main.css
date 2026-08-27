@@ -137,6 +137,11 @@ section .main-body{
     border-radius: 0;
 }
 
+.concert-section { margin-top: 3rem; }
+.concert-toolbar + .concert-section { margin-top: 3rem; }
+.concert-section-heading { border-bottom: 2px solid var(--concert-coral); margin-bottom: 0.5rem; padding-bottom: 0.5rem; }
+.concert-section-heading h2 { font-size: 2rem; margin: .25rem 0 0; }
+
 .concert-card {
     background: #fffdf8;
     border-left: 5px solid var(--concert-coral);
