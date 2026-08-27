@@ -47,18 +47,22 @@ function compareValues(first, second, field) {
     return String(first[field] || '').localeCompare(String(second[field] || ''), undefined, { sensitivity: 'base' });
 }
 
+function sortConcerts(concertsToSort, field, direction) {
+    return concertsToSort.sort((first, second) => {
+        const result = compareValues(first, second, field);
+        return direction === 'ascending' ? result : -result;
+    });
+}
+
 function render() {
     const query = searchInput.value.trim().toLowerCase();
     const field = sortSelect.value;
-    const matchingConcerts = concerts.filter(concert => Object.values(concert).join(' ').toLowerCase().includes(query));
+    const matchingConcerts = concerts.filter(concert => Object.values(concert).some(value => String(value || '').toLowerCase().includes(query)));
     const upcoming = matchingConcerts.filter(concert => dateValue(concert.date) >= startOfToday());
     const past = matchingConcerts.filter(concert => dateValue(concert.date) < startOfToday());
-    const compare = (first, second) => {
-        const result = compareValues(first, second, field);
-        return ascending ? result : -result;
-    };
-    upcoming.sort(compare);
-    past.sort((first, second) => field === 'date' ? -compareValues(first, second, field) * (ascending ? 1 : -1) : compare(first, second));
+    const direction = ascending ? 'ascending' : 'descending';
+    sortConcerts(upcoming, field, direction);
+    sortConcerts(past, field, field === 'date' ? (ascending ? 'descending' : 'ascending') : direction);
 
     document.getElementById('upcoming-count').textContent = concerts.filter(concert => dateValue(concert.date) >= startOfToday()).length;
     document.getElementById('past-count').textContent = concerts.filter(concert => dateValue(concert.date) < startOfToday()).length;
