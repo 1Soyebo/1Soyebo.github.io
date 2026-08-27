@@ -1,0 +1,42 @@
+# Add concert entries here. The page is read-only and loads this file.
+# Example:
+#   - artist: Artist name
+#     date: 2026-10-31
+#     time: "20:00"
+#     venue: Venue name
+#     city: City
+#     country: Country
+#     genre: Genre
+#     status: Attended
+#     rating: 5
+#     price: "$75"
+#     companions: Friends
+#     notes: A short review or memory.
+#     link: https://example.com/event
+concerts:
+  - artist: Example Artist
+    date: 2026-10-31
+    time: "20:00"
+    venue: Example Arena
+    city: Los Angeles
+    country: USA
+    genre: Live music
+    status: Attended
+    rating: 5
+    price: "$75"
+    companions: Friends
+    notes: A memorable night with an excellent live set.
+    link: https://example.com/event
+  - artist: Another Artist
+    date: 2026-11-15
+    time: "19:30"
+    venue: Another Venue
+    city: New York
+    country: USA
+    genre: Rock
+    status: Attended
+    rating: 4
+    price: "$60"
+    companions: Family
+    notes: Great performance, but the sound quality could have been better.
+    link: https://example.com/another-event
