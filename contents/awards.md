@@ -1,1 +1,2 @@
 - Runner-Up, Best Demo Presentation, IEEE EMBS International Conference on Body Sensor Networks (BSN), 2025.
+- Honourable Mention, Human-centered AI Research for Mental health, an Open Networking sYmposium (HARMONY)
