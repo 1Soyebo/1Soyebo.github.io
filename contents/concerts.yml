@@ -27,9 +27,22 @@ concerts:
     companions: Alone
     # notes: A memorable night with an excellent live set.
     link: https://www.ticketmaster.com/event/090064D2B5C5AB06
+  - artist: Omar
+    date: 2026-10-17
+    time: "18:00"
+    venue: Catch One
+    city: Los Angeles
+    country: USA
+    genre: Amapiano, Afrobeats, 3 Step, RnB, Gospel
+    # status: Attended
+    # rating: 5
+    price: "$23.49"
+    companions: Alone
+    # notes: A memorable night with an excellent live set.
+    link: https://link.dice.fm/8yRJ3EQom6b?sharer_id=67062f6a20e64400016cfa1d
   - artist: Bantu
     date: 2026-09-04
-    time: "20:00"
+    time: "22:00"
     venue: The Spotlight
     city: Los Angeles
     country: USA
@@ -40,7 +53,7 @@ concerts:
     companions: Friends
     notes: Outstanding set. I was thoroughly impressed. AfroHouse sets in LA leaves much to be desired but Bantu was a breath of fresh air. His set lasted about 3 hours too and it was straight bangers throughout. Bonus points cuz I got free tickets through Spotlight's Members
     link: https://www.instagram.com/thisisbantu/?hl=en
-  - artist: Karaba
+  - artist: Karaba and KMNI
     date: 2026-09-11
     time: "22:00"
     venue: The Spotlight
@@ -157,3 +170,29 @@ concerts:
     companions: Alone
     notes: Went after leg day too lmfao, made a lot of new friends. The venue was small and intimate. He performed a lot of his hits and some new songs. He's such a baddie.
     link: https://linktr.ee/BlackEagleTourbyote
+  - artist: Shimza
+    date: 2026-03-28
+    time: "22:00"
+    venue: Sound Nightclub
+    city: Los Angeles
+    country: USA
+    genre: Afro House
+    status: Attended
+    rating: 5
+    price: "$36.26"
+    companions: Friends
+    notes: Music was great. Phones were stolen.
+    link: https://www.instagram.com/shimza.dj/?hl=en
+  - artist: Caiiro
+    date: 2026-02-06
+    time: "22:00"
+    venue: The Spotlight
+    city: Los Angeles
+    country: USA
+    genre: Afro House
+    status: Attended
+    rating: 5
+    price: "$30.65"
+    companions: Alone
+    notes: I had a bloody good time. First Afro House set I loved in LA
+    link: https://www.instagram.com/caiirosa/?hl=en
