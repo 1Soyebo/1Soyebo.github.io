@@ -19,7 +19,9 @@ function displayDate(date) {
 }
 
 function parseDate(date) {
-    if (date instanceof Date) return date;
+    if (date instanceof Date) {
+        return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), 12);
+    }
     const dateText = String(date);
     return new Date(/^\d{4}-\d{2}-\d{2}$/.test(dateText) ? `${dateText}T12:00:00` : dateText);
 }
